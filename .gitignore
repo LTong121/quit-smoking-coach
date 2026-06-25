@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Runtime memory. Keep only the checked-in example template.
+state/user_state.json
+!state/user_state.example.json
+
+# Local tooling output.
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

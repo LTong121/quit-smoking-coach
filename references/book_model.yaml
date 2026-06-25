@@ -1,0 +1,1129 @@
+metadata:
+  title: "这书能让你戒烟"
+  source_file: "这书能让你戒烟.pdf"
+  compiler_role: "Book-to-Skill Compiler"
+  model_type: "behavior_change_coaching_model"
+  domain: "smoking_cessation"
+  language: "zh-CN"
+  core_thesis: "吸烟持续的核心不是享受或习惯，而是尼古丁依赖与社会/自我洗脑共同制造的恐惧；戒烟教练的任务是先解除错误信念，再让用户以非吸烟者身份行动。"
+  primary_change_levers:
+    - "拆除吸烟的正收益幻觉"
+    - "把戒烟从牺牲框架改写为获自由框架"
+    - "区分轻微生理戒断与强烈心理恐惧"
+    - "阻断只来一支的连锁反应"
+    - "将渴望解释为毒瘾消退信号"
+
+runtime_principles:
+  - id: RP001
+    rule: "先处理信念，再处理行为。"
+    implication: "如果用户仍相信吸烟有实际好处，不直接要求其硬扛戒断。"
+  - id: RP002
+    rule: "不使用牺牲、忍耐、熬过去作为主框架。"
+    implication: "教练应反复强调用户没有失去奖励，而是在停止自我伤害。"
+  - id: RP003
+    rule: "将吸烟作为整体链条处理，而不是单支行为。"
+    implication: "任何一支烟都被解释为重新启动依赖循环。"
+  - id: RP004
+    rule: "戒烟身份从最后一支烟熄灭时立即生效。"
+    implication: "不让用户等待某个外部证明来确认自己已成功。"
+  - id: RP005
+    rule: "教练避免羞辱吸烟者。"
+    implication: "把问题归因于陷阱、毒瘾和洗脑，而不是人格缺陷。"
+
+guardrails:
+  - "本模型用于认知与行为支持，不替代专业医疗建议。"
+  - "若用户出现严重焦虑、抑郁、自伤想法或复杂药物依赖，应建议联系医疗/心理专业人士。"
+  - "不建议用户使用尼古丁或烟草作为压力应对方式。"
+  - "不以恐吓作为主要干预，但可在用户否认风险时温和引入后果现实检验。"
+
+false_beliefs:
+  - id: FB001
+    belief: "吸烟能缓解压力。"
+    description: "用户把尼古丁戒断被暂时解除后的感觉误认为压力被香烟解决。"
+  - id: FB002
+    belief: "吸烟能让人放松。"
+    description: "用户把从戒断紧张回到较低不适水平误判为真正放松。"
+  - id: FB003
+    belief: "吸烟能提高注意力。"
+    description: "用户把解除烟瘾干扰后的短暂清晰感归功于香烟。"
+  - id: FB004
+    belief: "吸烟能排解无聊。"
+    description: "用户在无聊时更容易觉察戒断空虚，于是误以为香烟填补了无聊。"
+  - id: FB005
+    belief: "吸烟是一种享受。"
+    description: "用户将解除不适的过程解释为正向享受，而忽略烟味、气味、身体反应和羞耻感。"
+  - id: FB006
+    belief: "戒烟意味着放弃重要的东西。"
+    description: "用户把停止依赖视为失去奖励、安慰、社交工具或生活支点。"
+  - id: FB007
+    belief: "戒烟主要靠意志力。"
+    description: "用户认为需要长期压抑欲望，而不是拆除欲望背后的错误信念。"
+  - id: FB008
+    belief: "戒断症状会非常痛苦。"
+    description: "用户把心理恐惧和被剥夺感投射到生理戒断上。"
+  - id: FB009
+    belief: "只要一支烟没有关系。"
+    description: "用户把单次吸烟从依赖链条中切开，忽略它会重新引入尼古丁并唤醒循环。"
+  - id: FB010
+    belief: "减量吸烟能逐步戒烟。"
+    description: "用户认为减少剂量会削弱依赖，实际常会强化每支烟的稀缺奖励感。"
+  - id: FB011
+    belief: "替代品能填补香烟留下的空缺。"
+    description: "用户把戒烟理解为需要替换某种真实需求，而不是停止一个虚假需求。"
+  - id: FB012
+    belief: "尼古丁替代能解决问题。"
+    description: "用户希望用同类成瘾物维持依赖，同时期待依赖自然消失。"
+  - id: FB013
+    belief: "我比别人烟瘾更大，所以更难戒。"
+    description: "用户把失败归因于个人特殊性，削弱自我效能。"
+  - id: FB014
+    belief: "吸烟是习惯，不是毒瘾。"
+    description: "用户用习惯框架解释自动化行为，低估尼古丁依赖和心理依赖。"
+  - id: FB015
+    belief: "我需要等到压力小的时候再戒烟。"
+    description: "用户把压力当作延期理由，却忽略吸烟本身增加压力。"
+  - id: FB016
+    belief: "社交场合没有烟就无法享受。"
+    description: "用户把社交愉悦与吸烟绑定，忽略非吸烟者同样能享受社交。"
+  - id: FB017
+    belief: "饭后一支烟特别好。"
+    description: "用户把饭后本来已有的放松与戒断解除混淆成香烟带来的享受。"
+  - id: FB018
+    belief: "戒烟后我会怀念吸烟。"
+    description: "用户预期未来会长期失落，因此提前制造被剥夺感。"
+  - id: FB019
+    belief: "戒烟会让我变胖。"
+    description: "用户把替代进食、食欲恢复和戒烟本身混为一谈。"
+  - id: FB020
+    belief: "我随身带烟会更安心。"
+    description: "用户把保留退路当作安全感，实际是未完成决断的证据。"
+  - id: FB021
+    belief: "失败说明我意志薄弱。"
+    description: "用户把失败归咎人格，而非错误方法和未拆除的认知框架。"
+  - id: FB022
+    belief: "吸烟是我自己的选择。"
+    description: "用户误以为持续吸烟体现自主，忽略依赖和恐惧对选择的劫持。"
+  - id: FB023
+    belief: "吸烟能帮助我应对低谷。"
+    description: "用户把低谷中的渴望当成需要烟的证据，而非旧触发回路被激活。"
+  - id: FB024
+    belief: "戒烟成功后偶尔吸一支也能控制。"
+    description: "用户把长期不吸烟误认为免疫，忽略第一口即可重启依赖。"
+  - id: FB025
+    belief: "吸烟的危害是遥远概率。"
+    description: "用户用选择性失明淡化累积性伤害，维持继续吸烟的合理化。"
+
+target_beliefs:
+  - id: TB001
+    belief: "吸烟不能缓解压力，只能暂时缓解吸烟造成的戒断压力。"
+    description: "用户把压力源从外界转回尼古丁循环。"
+  - id: TB002
+    belief: "真正的放松来自不再需要香烟。"
+    description: "用户将非吸烟状态理解为更稳定的生理和心理安宁。"
+  - id: TB003
+    belief: "不吸烟时注意力更完整。"
+    description: "用户意识到香烟制造了分心需求，而不是解决分心。"
+  - id: TB004
+    belief: "无聊不会被烟解决，烟只让无聊多了一层依赖。"
+    description: "用户将无聊和戒断空虚分开处理。"
+  - id: TB005
+    belief: "吸烟没有真实好处。"
+    description: "用户能把所有所谓好处还原为戒断缓解或社会洗脑。"
+  - id: TB006
+    belief: "戒烟不是放弃，而是停止损失。"
+    description: "用户把戒烟视为恢复自由、健康、自尊和选择权。"
+  - id: TB007
+    belief: "成功戒烟依赖清晰认知和确定决定，而不是长期硬扛。"
+    description: "用户从意志力模型转向理解-决断模型。"
+  - id: TB008
+    belief: "戒断感是毒瘾消退的信号，不是危险信号。"
+    description: "用户将渴望转译为康复反馈。"
+  - id: TB009
+    belief: "不存在孤立的一支烟。"
+    description: "用户把单支烟看作依赖链条的入口。"
+  - id: TB010
+    belief: "彻底停止比减量更简单。"
+    description: "用户理解减量会延长戒断、强化稀缺感和心理依赖。"
+  - id: TB011
+    belief: "我不需要替代品，因为我没有失去真实需求。"
+    description: "用户拒绝用新仪式证明香烟重要。"
+  - id: TB012
+    belief: "继续摄入尼古丁会延长依赖。"
+    description: "用户能识别尼古丁替代的逻辑陷阱。"
+  - id: TB013
+    belief: "我的情况不特殊，任何吸烟者都能停止。"
+    description: "用户恢复自我效能，减少例外化借口。"
+  - id: TB014
+    belief: "吸烟是成瘾陷阱，不是普通习惯。"
+    description: "用户用更准确的模型解释行为循环。"
+  - id: TB015
+    belief: "现在就是合适时机。"
+    description: "用户理解等待完美时机本身是恐惧策略。"
+  - id: TB016
+    belief: "社交快乐不依赖香烟。"
+    description: "用户在社交场景中把自己定位为自由者而非被剥夺者。"
+  - id: TB017
+    belief: "饭后轻松来自饭局本身，不来自香烟。"
+    description: "用户拆除特定场景和吸烟之间的错误绑定。"
+  - id: TB018
+    belief: "我不会怀念被控制的感觉。"
+    description: "用户把未来想象从失落转为轻松和同情。"
+  - id: TB019
+    belief: "体重变化来自替代进食和食欲恢复，可被正常饮食管理。"
+    description: "用户不再把变胖当作继续吸烟的理由。"
+  - id: TB020
+    belief: "不保留香烟才是真正的安全。"
+    description: "用户将彻底决断视为安全感来源。"
+  - id: TB021
+    belief: "过去失败说明方法错误，不说明我有缺陷。"
+    description: "用户减少羞耻并愿意重新行动。"
+  - id: TB022
+    belief: "我不是在失去选择，而是在夺回选择权。"
+    description: "用户将吸烟者身份从自主者改写为被陷阱控制者。"
+  - id: TB023
+    belief: "低谷时不吸烟，我反而更能处理现实问题。"
+    description: "用户相信非吸烟状态提升应对能力。"
+  - id: TB024
+    belief: "戒烟成功后第一支烟仍然危险。"
+    description: "用户建立长期零容忍边界。"
+  - id: TB025
+    belief: "吸烟伤害是累积过程，每一支都在推进链条。"
+    description: "用户停止用遥远概率麻痹自己。"
+
+transformations:
+  - id: BT001
+    from_belief: FB001
+    to_belief: TB001
+    transformation_steps:
+      - "让用户描述压力来临前后的吸烟体验。"
+      - "指出香烟只降低了尼古丁戒断造成的额外压力。"
+      - "对比非吸烟者面对同一压力时不需要香烟。"
+    reasoning_pattern: "因果倒置纠正：把被误认成解决方案的行为还原为问题来源。"
+  - id: BT002
+    from_belief: FB002
+    to_belief: TB002
+    transformation_steps:
+      - "询问用户不吸烟时为何不能放松。"
+      - "解释尼古丁下降制造紧张，吸烟只是短暂解除紧张。"
+      - "引导用户想象不再有这种紧张源的状态。"
+    reasoning_pattern: "对照非吸烟者：真正放松是不需要解除人为制造的不适。"
+  - id: BT003
+    from_belief: FB003
+    to_belief: TB003
+    transformation_steps:
+      - "识别用户集中注意前的抽烟仪式。"
+      - "指出香烟熄灭后会再次制造分心。"
+      - "将不吸烟定义为减少干扰源。"
+    reasoning_pattern: "短期缓解与长期干扰对比。"
+  - id: BT004
+    from_belief: FB004
+    to_belief: TB004
+    transformation_steps:
+      - "区分无聊本身与无聊时被觉察到的空虚感。"
+      - "让用户观察吸烟后活动是否真正变有趣。"
+      - "重构为无聊场景触发旧回路，而不是烟有解闷功能。"
+    reasoning_pattern: "情境触发拆解。"
+  - id: BT005
+    from_belief: FB005
+    to_belief: TB005
+    transformation_steps:
+      - "请用户回忆第一支烟、早晨第一支烟或有意识吸烟时的真实感受。"
+      - "拆分烟味、气味、身体反应、心理缓解四个层面。"
+      - "把所谓享受命名为戒断解除。"
+    reasoning_pattern: "体验再标注。"
+  - id: BT006
+    from_belief: FB006
+    to_belief: TB006
+    transformation_steps:
+      - "列出用户认为会失去的东西。"
+      - "逐项追问这些东西是否由香烟真实提供。"
+      - "转为列出停止吸烟立即恢复的自由。"
+    reasoning_pattern: "损失框架反转为收益框架。"
+  - id: BT007
+    from_belief: FB007
+    to_belief: TB007
+    transformation_steps:
+      - "解释意志力法为何制造牺牲感和等待心态。"
+      - "强调决定一旦完成，目标身份即刻生效。"
+      - "把后续渴望作为旧回路残留而不是命令。"
+    reasoning_pattern: "从压抑欲望到消除欲望理由。"
+  - id: BT008
+    from_belief: FB008
+    to_belief: TB008
+    transformation_steps:
+      - "区分生理空虚感、心理恐惧和场景触发。"
+      - "告诉用户不适代表尼古丁循环正在断开。"
+      - "将每次渴望转换为自由进度提醒。"
+    reasoning_pattern: "症状意义重构。"
+  - id: BT009
+    from_belief: FB009
+    to_belief: TB009
+    transformation_steps:
+      - "回看用户最初染上烟瘾是否也是从一支开始。"
+      - "解释尼古丁重新进入身体后的连锁反应。"
+      - "用整体视角替代单支视角。"
+    reasoning_pattern: "链条化推理。"
+  - id: BT010
+    from_belief: FB010
+    to_belief: TB010
+    transformation_steps:
+      - "说明减量会增加等待下一支的时间。"
+      - "指出等待越久，短暂缓解越像奖励。"
+      - "引导用户选择一次性终止循环。"
+    reasoning_pattern: "稀缺奖励放大机制。"
+  - id: BT011
+    from_belief: FB011
+    to_belief: TB011
+    transformation_steps:
+      - "询问替代品要替代的真实需求是什么。"
+      - "指出空虚感来自烟瘾而非生活需要。"
+      - "把不用替代品定义为不给烟瘾保留地位。"
+    reasoning_pattern: "需求真实性检验。"
+  - id: BT012
+    from_belief: FB012
+    to_belief: TB012
+    transformation_steps:
+      - "将尼古丁替代解释为维持小剂量依赖。"
+      - "区分停止吸烟动作与停止尼古丁依赖。"
+      - "强调目标是切断尼古丁摄入链。"
+    reasoning_pattern: "目标一致性检验。"
+  - id: BT013
+    from_belief: FB013
+    to_belief: TB013
+    transformation_steps:
+      - "承认用户经历真实，但不承认其不可改变。"
+      - "指出差异主要来自洗脑强度和场景绑定。"
+      - "把每类特殊性转成可处理的触发条件。"
+    reasoning_pattern: "去例外化。"
+  - id: BT014
+    from_belief: FB014
+    to_belief: TB014
+    transformation_steps:
+      - "解释习惯不会制造化学戒断。"
+      - "说明毒瘾会通过每次摄入增强自身。"
+      - "把行为自动化视为成瘾循环的表层表现。"
+    reasoning_pattern: "模型升级。"
+  - id: BT015
+    from_belief: FB015
+    to_belief: TB015
+    transformation_steps:
+      - "指出用户过去总能找到时机不对的理由。"
+      - "解释压力小会缺少动机，压力大会害怕戒烟。"
+      - "将现在定义为唯一能行动的时点。"
+    reasoning_pattern: "延期悖论暴露。"
+  - id: BT016
+    from_belief: FB016
+    to_belief: TB016
+    transformation_steps:
+      - "让用户观察社交中的非吸烟者。"
+      - "区分社交乐趣与戒断缓解。"
+      - "把社交场合设计为证明自由的实验。"
+    reasoning_pattern: "场景解绑。"
+  - id: BT017
+    from_belief: FB017
+    to_belief: TB017
+    transformation_steps:
+      - "询问饭后香烟的味道是否真的不同。"
+      - "指出饭后本身就是放松场景。"
+      - "引导用户饭后不吸烟并观察轻松是否仍存在。"
+    reasoning_pattern: "错误归因修正。"
+  - id: BT018
+    from_belief: FB018
+    to_belief: TB018
+    transformation_steps:
+      - "区分怀念香烟与怀念解除烟瘾的错觉。"
+      - "让用户想象不再焦虑带烟、找烟、等烟的生活。"
+      - "把未来吸烟者视角转成自由者视角。"
+    reasoning_pattern: "未来自我重构。"
+  - id: BT019
+    from_belief: FB019
+    to_belief: TB019
+    transformation_steps:
+      - "说明体重增加常来自用食物替代戒断感。"
+      - "把正常食欲恢复与失控进食分开。"
+      - "建立非用餐时间不用零食替代的规则。"
+    reasoning_pattern: "关联拆分。"
+  - id: BT020
+    from_belief: FB020
+    to_belief: TB020
+    transformation_steps:
+      - "指出随身带烟暗示用户仍认为可能需要它。"
+      - "把安全感来源从退路转向决断。"
+      - "建议移除随手可得的香烟。"
+    reasoning_pattern: "承诺一致性。"
+  - id: BT021
+    from_belief: FB021
+    to_belief: TB021
+    transformation_steps:
+      - "复盘失败时是否存在牺牲感、等待感或只来一支。"
+      - "将失败归因于方法机制而非人格。"
+      - "恢复用户再次尝试的资格感。"
+    reasoning_pattern: "羞耻去人格化。"
+  - id: BT022
+    from_belief: FB022
+    to_belief: TB022
+    transformation_steps:
+      - "追问用户是否曾选择终生依赖香烟。"
+      - "指出最初只是尝试，后续被依赖劫持。"
+      - "将停止吸烟定义为恢复自主。"
+    reasoning_pattern: "自主性夺回。"
+  - id: BT023
+    from_belief: FB023
+    to_belief: TB023
+    transformation_steps:
+      - "承认低谷会激活旧触发。"
+      - "指出吸烟会在低谷上叠加戒断循环和自责。"
+      - "把不吸烟作为增强抗压能力的行动。"
+    reasoning_pattern: "短期冲动与长期应对力对比。"
+  - id: BT024
+    from_belief: FB024
+    to_belief: TB024
+    transformation_steps:
+      - "说明长期不吸不等于对尼古丁免疫。"
+      - "回顾第一支烟如何创造依赖。"
+      - "建立终身不再试探的边界。"
+    reasoning_pattern: "复吸入口封锁。"
+  - id: BT025
+    from_belief: FB025
+    to_belief: TB025
+    transformation_steps:
+      - "把危害从单次概率改写为每支累积。"
+      - "让用户看到下一支不是孤立事件，而是继续整条链。"
+      - "用现实检验打破选择性失明。"
+    reasoning_pattern: "累积风险显化。"
+
+interventions:
+  - id: INT001
+    name: "因果倒置拆解"
+    goal: "让用户看见香烟制造了它声称要解决的问题。"
+    trigger_condition: "用户说吸烟能缓解压力、无聊、焦虑、注意力问题或放松困难。"
+    execution_pattern:
+      - "要求用户描述不吸烟前的不适。"
+      - "指出不适的来源是尼古丁下降或旧场景联想。"
+      - "将吸烟后的改善定义为回到较低不适，而非获得好处。"
+    expected_outcome: "用户不再把香烟当作解决方案。"
+  - id: INT002
+    name: "非吸烟者对照"
+    goal: "证明目标状态不是缺失状态，而是正常状态。"
+    trigger_condition: "用户担心没有烟无法生活。"
+    execution_pattern:
+      - "引入非吸烟者在同一场景中的表现。"
+      - "询问非吸烟者为何不需要香烟也能应对。"
+      - "将用户目标定位为恢复非吸烟者状态。"
+    expected_outcome: "用户降低对未知状态的恐惧。"
+  - id: INT003
+    name: "链条视角"
+    goal: "阻断单支合理化。"
+    trigger_condition: "用户说只抽一支、只吸一口、偶尔没关系。"
+    execution_pattern:
+      - "把这一支连接到第一支和下一支。"
+      - "强调尼古丁重新进入身体后的连锁反应。"
+      - "要求用户在整体吸烟生活与自由生活之间二选一。"
+    expected_outcome: "用户放弃单支烟例外。"
+  - id: INT004
+    name: "牺牲框架反转"
+    goal: "把戒烟从失去改写为获得。"
+    trigger_condition: "用户表达难过、被剥夺或可惜。"
+    execution_pattern:
+      - "列出用户认为被剥夺的东西。"
+      - "逐项证明香烟并未真实提供。"
+      - "转向自由、健康、金钱、自尊、平静的获得。"
+    expected_outcome: "用户从忍耐转入期待。"
+  - id: INT005
+    name: "恐惧命名"
+    goal: "将模糊抗拒变成可分析对象。"
+    trigger_condition: "用户拖延、慌乱、找时机借口。"
+    execution_pattern:
+      - "询问用户具体怕什么。"
+      - "归类为短期戒断恐惧、长期生活质量恐惧、失败恐惧或社交恐惧。"
+      - "逐类匹配信念转化路径。"
+    expected_outcome: "用户从情绪笼罩转入具体推理。"
+  - id: INT006
+    name: "体验再标注"
+    goal: "重新解释渴望和缓解。"
+    trigger_condition: "用户说想抽、抽了会舒服。"
+    execution_pattern:
+      - "承认舒服感可能真实存在。"
+      - "说明舒服来自解除毒瘾造成的不适。"
+      - "把渴望标注为毒瘾消退时的残余信号。"
+    expected_outcome: "用户能体验渴望而不服从渴望。"
+  - id: INT007
+    name: "身份即时切换"
+    goal: "避免用户把戒烟理解为漫长等待。"
+    trigger_condition: "用户说等熬过几周才算成功。"
+    execution_pattern:
+      - "确认最后一支烟已结束或即将结束。"
+      - "声明身份从决定完成时生效。"
+      - "要求后续用非吸烟者语言描述自己。"
+    expected_outcome: "用户从尝试者变为非吸烟者。"
+  - id: INT008
+    name: "等待陷阱解除"
+    goal: "防止用户等待某个神奇信号。"
+    trigger_condition: "用户问什么时候才算彻底好。"
+    execution_pattern:
+      - "解释等待会产生怀疑。"
+      - "说明身体恢复会自然发生，不需要被验证。"
+      - "引导用户正常生活并观察自由感。"
+    expected_outcome: "用户减少反复检查欲望。"
+  - id: INT009
+    name: "减量悖论暴露"
+    goal: "阻止以减量延长依赖。"
+    trigger_condition: "用户计划每天少抽几支或只在关键场景抽。"
+    execution_pattern:
+      - "说明减量增加等待与渴望。"
+      - "指出每支烟会因此更像奖励。"
+      - "建议一次性终止尼古丁链条。"
+    expected_outcome: "用户放弃减量作为主方案。"
+  - id: INT010
+    name: "替代品去神化"
+    goal: "让用户不再用替代品证明香烟重要。"
+    trigger_condition: "用户想用糖、口香糖、零食、电子烟、尼古丁制品代替。"
+    execution_pattern:
+      - "询问替代品要解决的是饥饿、无聊还是戒断空虚。"
+      - "说明替代品不能解决尼古丁依赖的信念根。"
+      - "建立不在非用餐时间用零食填补的规则。"
+    expected_outcome: "用户把空虚感作为恢复信号处理。"
+  - id: INT011
+    name: "最后一支烟仪式"
+    goal: "把戒烟决断转化为清晰边界。"
+    trigger_condition: "用户已经完成认知转化并准备停止吸烟。"
+    execution_pattern:
+      - "让用户确认自己能成功且为自由兴奋。"
+      - "让用户有意识地体验最后一支烟的糟糕与无益。"
+      - "熄灭时使用自由身份宣告，而不是禁止语言。"
+    expected_outcome: "用户以积极身份进入戒断期。"
+  - id: INT012
+    name: "诱惑预演"
+    goal: "提前处理递烟、聚会、饭后、低谷等高危场景。"
+    trigger_condition: "用户即将进入戒断期或报告高风险场景。"
+    execution_pattern:
+      - "列出可能出现的诱惑脚本。"
+      - "为每个脚本匹配一句非吸烟者回应。"
+      - "要求用户在场景中观察而非回避所有生活。"
+    expected_outcome: "用户遇到触发时有现成反应。"
+  - id: INT013
+    name: "可怜而非羡慕"
+    goal: "改变用户看到吸烟者时的情绪反应。"
+    trigger_condition: "用户说看到别人吸烟会羡慕。"
+    execution_pattern:
+      - "提醒吸烟者正在缓解他们自己制造的不适。"
+      - "指出他们也可能希望自己没有成瘾。"
+      - "引导用户感受自由而非被剥夺。"
+    expected_outcome: "外部吸烟线索不再诱发羡慕。"
+  - id: INT014
+    name: "时机借口拆除"
+    goal: "终止无限延期。"
+    trigger_condition: "用户说现在压力大、假期后、忙完再戒。"
+    execution_pattern:
+      - "回顾过去延期模式。"
+      - "指出任何时机都能被解释成不合适。"
+      - "将行动时点绑定为读完和理解之后。"
+    expected_outcome: "用户接受现在行动。"
+  - id: INT015
+    name: "风险现实检验"
+    goal: "打破选择性失明，但不以恐吓为主。"
+    trigger_condition: "用户淡化健康、金钱或自由损失。"
+    execution_pattern:
+      - "把风险从抽象概率改成每支累积。"
+      - "让用户计算未来继续吸烟的实际代价。"
+      - "马上回到戒烟后的收益和自由。"
+    expected_outcome: "用户停止用遥远化风险自欺。"
+  - id: INT016
+    name: "失败去人格化"
+    goal: "帮助多次失败者重启。"
+    trigger_condition: "用户说自己没救、意志差、戒不了。"
+    execution_pattern:
+      - "承认失败痛苦。"
+      - "定位失败机制：意志力法、减量法、只一支、替代品、等待信号。"
+      - "重建可成功的操作路径。"
+    expected_outcome: "用户恢复行动信心。"
+  - id: INT017
+    name: "空虚感游戏化"
+    goal: "把戒断期从受苦变成进度反馈。"
+    trigger_condition: "用户报告戒断空虚或手上没事做。"
+    execution_pattern:
+      - "把空虚感命名为依赖正在断电。"
+      - "每次渴望出现时进行自由确认。"
+      - "记录触发越来越弱的证据。"
+    expected_outcome: "用户把戒断期体验为可完成的恢复过程。"
+  - id: INT018
+    name: "外部支持者指导"
+    goal: "让非吸烟者帮助而非压迫吸烟者。"
+    trigger_condition: "用户是亲友、伴侣或支持者。"
+    execution_pattern:
+      - "禁止羞辱、恐吓和持续提醒。"
+      - "帮助吸烟者理解依赖机制和恐惧。"
+      - "戒断期减少外部压力并肯定其非吸烟者身份。"
+    expected_outcome: "支持系统降低复吸风险。"
+
+triggers:
+  - id: TR001
+    trigger: "压力事件"
+    psychology: "外部压力叠加尼古丁戒断，让用户误以为烟能减压。"
+  - id: TR002
+    trigger: "接电话或突发打扰"
+    psychology: "微压力激活旧的快速缓解脚本。"
+  - id: TR003
+    trigger: "无聊独处"
+    psychology: "注意力转向内在空虚感，旧回路要求用烟填补。"
+  - id: TR004
+    trigger: "需要集中工作"
+    psychology: "用户担心戒断感分散注意力，于是想先吸一支。"
+  - id: TR005
+    trigger: "饭后"
+    psychology: "饭后放松和戒断缓解被错误绑定。"
+  - id: TR006
+    trigger: "早晨起床"
+    psychology: "长时间未摄入尼古丁后，空虚感更容易被觉察。"
+  - id: TR007
+    trigger: "饮酒"
+    psychology: "控制力下降，社交脚本和奖励脚本同时增强。"
+  - id: TR008
+    trigger: "咖啡或茶"
+    psychology: "固定搭配形成条件反射。"
+  - id: TR009
+    trigger: "聚会"
+    psychology: "用户把归属感、放松感和吸烟动作混在一起。"
+  - id: TR010
+    trigger: "看到别人吸烟"
+    psychology: "外部线索唤起羡慕或被剥夺感。"
+  - id: TR011
+    trigger: "别人递烟"
+    psychology: "礼貌压力和旧身份共同诱发自动接受。"
+  - id: TR012
+    trigger: "禁烟场所结束"
+    psychology: "长时间克制后的解除感被解释为烟的价值。"
+  - id: TR013
+    trigger: "休息时间"
+    psychology: "用户把休息奖励与吸烟绑定。"
+  - id: TR014
+    trigger: "开车"
+    psychology: "重复情境形成自动化动作，尤其在堵车或长途时。"
+  - id: TR015
+    trigger: "等待、排队、通勤"
+    psychology: "时间空档放大手口动作需求。"
+  - id: TR016
+    trigger: "工作完成后"
+    psychology: "奖励脚本诱发一支烟庆祝。"
+  - id: TR017
+    trigger: "工作受挫后"
+    psychology: "安慰脚本让用户寻找快速情绪切换。"
+  - id: TR018
+    trigger: "家庭争吵"
+    psychology: "愤怒和压力被误认为需要烟才能平复。"
+  - id: TR019
+    trigger: "孤独或失落"
+    psychology: "用户把香烟人格化为陪伴或支撑。"
+  - id: TR020
+    trigger: "庆祝与高兴"
+    psychology: "高潮时刻被旧奖励脚本绑定。"
+  - id: TR021
+    trigger: "生活低谷"
+    psychology: "用户试图用旧方式逃避不适，忘记烟会增加问题。"
+  - id: TR022
+    trigger: "睡前"
+    psychology: "结束日程的仪式感与吸烟绑定。"
+  - id: TR023
+    trigger: "夜间醒来"
+    psychology: "焦虑和戒断空虚可能被误读为必须吸烟。"
+  - id: TR024
+    trigger: "体重焦虑"
+    psychology: "用户担心戒烟带来新问题，于是用吸烟维持旧状态。"
+  - id: TR025
+    trigger: "戒烟几天后感觉良好"
+    psychology: "用户想用一支烟证明自己已摆脱依赖。"
+  - id: TR026
+    trigger: "戒烟三周左右"
+    psychology: "生理依赖减弱后，试探性吸烟风险升高。"
+  - id: TR027
+    trigger: "随身有烟"
+    psychology: "近距离可得性降低反悔成本，并暴露未决断。"
+  - id: TR028
+    trigger: "秘密吸烟环境"
+    psychology: "羞耻和隐蔽性形成额外压力，反而增强依赖循环。"
+  - id: TR029
+    trigger: "与吸烟者亲友相处"
+    psychology: "群体规范和共同借口维持旧身份。"
+  - id: TR030
+    trigger: "健康恐惧"
+    psychology: "恐惧过强时用户会逃避思考，甚至用吸烟缓解恐惧。"
+  - id: TR031
+    trigger: "觉得戒烟太顺利"
+    psychology: "用户怀疑没有痛苦就不算真的戒烟，从而寻找验证。"
+  - id: TR032
+    trigger: "怀念旧生活片段"
+    psychology: "记忆选择性保留社交快乐，错误归功于香烟。"
+
+experiments:
+  - id: EXP001
+    objective: "验证吸烟不是享受。"
+    procedure:
+      - "在仍吸烟阶段，用户有意识地观察下一支烟的味道、气味、喉咙和身体感受。"
+      - "分开记录烟味本身与戒断解除后的心理变化。"
+    expected_realization: "用户发现所谓享受不是烟味本身，而是缓解依赖。"
+  - id: EXP002
+    objective: "验证饭后一支烟并无特殊味道。"
+    procedure:
+      - "饭后如仍在阅读阶段且尚未到最后一支烟，刻意观察烟味是否不同。"
+      - "比较饭后轻松来自食物、场景还是香烟。"
+    expected_realization: "饭后快乐不是由香烟创造。"
+  - id: EXP003
+    objective: "验证非吸烟者能正常应对压力。"
+    procedure:
+      - "观察身边非吸烟者面对电话、工作、社交压力时的行为。"
+      - "记录他们是否需要香烟才能恢复平静。"
+    expected_realization: "压力应对能力不依赖香烟。"
+  - id: EXP004
+    objective: "验证禁烟时长本身并不可怕。"
+    procedure:
+      - "回忆睡眠、电影院、交通工具、禁烟办公室等自然不吸烟时段。"
+      - "比较这些时段和主动戒烟时的心理差异。"
+    expected_realization: "痛苦主要来自不能吸的心理冲突，而非生理戒断强度。"
+  - id: EXP005
+    objective: "暴露减量法的痛苦机制。"
+    procedure:
+      - "回顾或模拟只允许自己在固定时间吸烟的状态。"
+      - "观察等待下一支时是否更惦记香烟。"
+    expected_realization: "减量会增强每支烟的稀缺感和心理价值。"
+  - id: EXP006
+    objective: "计算一支烟的真实代价。"
+    procedure:
+      - "估算未来继续吸烟的总支出、时间、健康和自由成本。"
+      - "把下一支烟视为整个未来链条的入口。"
+    expected_realization: "下一支烟不是小成本，而是继续整套损失。"
+  - id: EXP007
+    objective: "把戒断感转化为恢复证据。"
+    procedure:
+      - "每次出现空虚或想吸烟时，记录触发场景。"
+      - "用固定句式标注：这是依赖正在消退。"
+    expected_realization: "渴望可被观察，不必服从。"
+  - id: EXP008
+    objective: "验证社交不需要烟。"
+    procedure:
+      - "戒烟后参加一个轻松社交场景。"
+      - "专注观察谈话、食物、气氛和他人吸烟者的依赖表现。"
+    expected_realization: "社交质量不因不吸烟而下降。"
+  - id: EXP009
+    objective: "测试递烟拒绝脚本。"
+    procedure:
+      - "预先练习简短拒绝语。"
+      - "被递烟时直接以非吸烟者身份回应。"
+    expected_realization: "拒绝不会造成灾难，反而强化身份。"
+  - id: EXP010
+    objective: "识别替代品无效。"
+    procedure:
+      - "当想用糖、口香糖或零食填补空虚时，先暂停并命名空虚来源。"
+      - "若非真实饥饿，则不使用食物替代。"
+    expected_realization: "空虚不是食物缺口，替代品会强化牺牲感。"
+  - id: EXP011
+    objective: "验证随身带烟不是安全感。"
+    procedure:
+      - "检查自己是否想保留香烟以备不时之需。"
+      - "追问如果已经成功为什么还需要退路。"
+    expected_realization: "保留香烟是怀疑，不是安全。"
+  - id: EXP012
+    objective: "最后一支烟决断仪式。"
+    procedure:
+      - "确认核心信念已转化且用户愿意成为非吸烟者。"
+      - "有意识地吸完最后一支并观察其无益。"
+      - "熄灭后用自由身份宣告替代禁止宣告。"
+    expected_realization: "停止吸烟是获得自由的开始，而不是漫长惩罚。"
+  - id: EXP013
+    objective: "高风险场景预演。"
+    procedure:
+      - "列出未来七天最可能触发吸烟的场景。"
+      - "为每个场景写下一个认知重构句和一个行动回应。"
+    expected_realization: "触发不是命令，可以被脚本化处理。"
+  - id: EXP014
+    objective: "观察吸烟者而不羡慕。"
+    procedure:
+      - "看到别人吸烟时，观察其焦虑、找烟、点烟、躲避、气味和重复动作。"
+      - "提醒自己对方是在缓解自己制造的不适。"
+    expected_realization: "羡慕转化为同情和自由感。"
+  - id: EXP015
+    objective: "低谷不吸烟实验。"
+    procedure:
+      - "遇到烦躁、争吵或挫败时，先不吸烟并处理现实问题。"
+      - "事后记录不吸烟是否让问题变得更糟。"
+    expected_realization: "烟不会解决低谷；不吸烟更利于恢复。"
+  - id: EXP016
+    objective: "等待陷阱解除实验。"
+    procedure:
+      - "停止问自己是否已经彻底成功。"
+      - "每次检查欲望时改为做一个普通生活行动。"
+    expected_realization: "正常生活本身会削弱对烟的关注。"
+
+identity_transformation:
+  current_identity:
+    label: "被烟瘾控制但误以为自己在选择的吸烟者"
+    beliefs:
+      - "我需要香烟来应对生活。"
+      - "戒烟会让我失去某种支撑。"
+      - "我失败是因为我不够坚强。"
+    emotional_state:
+      - "恐惧"
+      - "羞耻"
+      - "自欺"
+      - "被剥夺感"
+  intermediate_identities:
+    - label: "怀疑吸烟收益的观察者"
+      marker: "开始有意识观察吸烟，而不是自动点烟。"
+    - label: "看穿陷阱的学习者"
+      marker: "能解释压力、放松、注意力、无聊等所谓好处其实来自戒断解除。"
+    - label: "准备逃离陷阱的决策者"
+      marker: "不再等待完美时机，准备以最后一支烟建立边界。"
+    - label: "刚脱离尼古丁循环的非吸烟者"
+      marker: "仍可能感到戒断空虚，但把它视为恢复信号。"
+    - label: "稳定自由者"
+      marker: "看到吸烟者时不羡慕，而是理解其被困状态。"
+  target_identity:
+    label: "快乐且自由的非吸烟者"
+    beliefs:
+      - "我不需要香烟。"
+      - "我没有放弃任何东西。"
+      - "任何一支烟都不值得重新进入陷阱。"
+      - "生活的高潮和低谷都不需要尼古丁。"
+    behavioral_markers:
+      - "不随身带烟。"
+      - "不使用尼古丁替代来延长依赖。"
+      - "在触发场景中保持正常生活。"
+      - "用简短、自豪、无争辩的方式拒绝递烟。"
+  transition_mechanisms:
+    - "去人格化：问题是陷阱和毒瘾，不是用户性格缺陷。"
+    - "去收益化：把所有吸烟好处拆成戒断缓解或社会洗脑。"
+    - "去牺牲化：把戒烟语言从不能吸改为不用吸。"
+    - "即时身份确认：最后一支烟熄灭后立即称自己为非吸烟者。"
+    - "复吸边界：终身不测试一支烟。"
+
+relapse_patterns:
+  - id: REL001
+    trigger: "只抽一支或一口"
+    false_reasoning: "我已经戒了，所以这一支证明不了什么。"
+    correction: "一支烟会重新引入尼古丁并启动下一支的渴望。"
+  - id: REL002
+    trigger: "戒烟几天后渴望降低"
+    false_reasoning: "我已经摆脱烟瘾，可以试一下。"
+    correction: "感觉良好是继续不吸的结果，不是试探尼古丁的许可。"
+  - id: REL003
+    trigger: "三周左右等待成就感"
+    false_reasoning: "如果没有神奇变化，说明我还没成功。"
+    correction: "成功从最后一支烟熄灭时开始；等待会制造怀疑。"
+  - id: REL004
+    trigger: "压力事件"
+    false_reasoning: "现在特殊，我需要烟撑过去。"
+    correction: "烟会叠加成瘾压力，不会解决现实压力。"
+  - id: REL005
+    trigger: "社交饮酒"
+    false_reasoning: "大家都抽，我偶尔配合一下没关系。"
+    correction: "社交归属不需要尼古丁；配合一支可能重启依赖。"
+  - id: REL006
+    trigger: "饭后怀念"
+    false_reasoning: "只有饭后这支是真的享受。"
+    correction: "饭后轻松来自饭局和休息，不来自烟味。"
+  - id: REL007
+    trigger: "看到别人吸烟"
+    false_reasoning: "他们看起来很享受，我被剥夺了。"
+    correction: "他们是在缓解自己的戒断，不是在获得自由者没有的快乐。"
+  - id: REL008
+    trigger: "随身留烟"
+    false_reasoning: "带着不抽能让我安心。"
+    correction: "保留香烟说明还在质疑决定，也让冲动更容易执行。"
+  - id: REL009
+    trigger: "体重增加或食欲恢复"
+    false_reasoning: "不如吸烟控制体重。"
+    correction: "体重问题用饮食和活动处理；吸烟不是体重管理工具。"
+  - id: REL010
+    trigger: "使用替代品"
+    false_reasoning: "我需要用别的东西代替烟。"
+    correction: "替代品强化戒烟是牺牲的信念，不能解决依赖根源。"
+  - id: REL011
+    trigger: "改用尼古丁制品"
+    false_reasoning: "先戒动作，再戒尼古丁。"
+    correction: "尼古丁继续存在会延长依赖并保留问题核心。"
+  - id: REL012
+    trigger: "过去失败记忆"
+    false_reasoning: "我以前失败，所以这次也会失败。"
+    correction: "过去失败多来自错误方法和未拆除信念；这次使用不同机制。"
+  - id: REL013
+    trigger: "情绪低落"
+    false_reasoning: "我需要烟给我安慰。"
+    correction: "香烟不是安慰剂，而是成瘾入口；安慰应来自真实支持和行动。"
+  - id: REL014
+    trigger: "庆祝"
+    false_reasoning: "高兴时来一支是奖励。"
+    correction: "奖励不应重新夺走自由。"
+  - id: REL015
+    trigger: "秘密吸烟"
+    false_reasoning: "没人知道就不算复吸。"
+    correction: "身体和依赖系统知道；秘密会增加羞耻和压力。"
+  - id: REL016
+    trigger: "轻度吸烟幻想"
+    false_reasoning: "我可以只在特定场合吸。"
+    correction: "特定场合会扩张，轻度吸烟仍保留心理依赖。"
+  - id: REL017
+    trigger: "健康恐惧太强"
+    false_reasoning: "太可怕了，先抽一支压压惊。"
+    correction: "用吸烟缓解吸烟造成的恐惧是循环本身。"
+  - id: REL018
+    trigger: "别人劝烟或嘲笑"
+    false_reasoning: "拒绝会破坏气氛。"
+    correction: "简短拒绝即可；身份比短暂社交压力更重要。"
+
+dialogue_strategies:
+  - strategy: "先承认感觉，再重构解释。"
+    purpose: "避免用户觉得被否定，同时改变其因果模型。"
+    example_structure: "你确实感觉舒服了；关键是舒服来自解除烟瘾制造的不适，而不是香烟创造了好处。"
+  - strategy: "使用反问揭示荒谬。"
+    purpose: "让用户自己发现吸烟理由不一致。"
+    example_structure: "如果它真是享受，为什么你希望自己从未开始？"
+  - strategy: "把用户从道德失败中解救出来。"
+    purpose: "降低羞耻，增加行动空间。"
+    example_structure: "这不是你弱，而是陷阱被设计得会让人误解。"
+  - strategy: "持续区分生理戒断和心理洗脑。"
+    purpose: "让问题可操作，不再混成一团恐惧。"
+    example_structure: "这个空虚感是一部分，认为没有烟就不能生活是另一部分。"
+  - strategy: "用非吸烟者作为现实参照。"
+    purpose: "证明目标状态可行且普通。"
+    example_structure: "同样的饭局里，非吸烟者并不需要离席吸烟也能享受。"
+  - strategy: "避免恐吓主导。"
+    purpose: "防止用户因恐惧过强而逃避或用烟缓解恐惧。"
+    example_structure: "风险确实存在，但更重要的是你现在可以停止这个链条。"
+  - strategy: "将渴望转成胜利提示。"
+    purpose: "让戒断期变成积极反馈。"
+    example_structure: "这次想抽说明旧系统在失去能量，你不需要喂它。"
+  - strategy: "使用二选一框架。"
+    purpose: "阻断灰色合理化。"
+    example_structure: "你不是选择这一支，而是在继续整个吸烟链条和保持自由之间选择。"
+  - strategy: "用具体场景拆除抽象信念。"
+    purpose: "让用户看到信念在饭后、压力、社交等场景中如何运作。"
+    example_structure: "我们只看饭后这支，它的味道到底和其他时候有什么不同？"
+  - strategy: "把戒烟语言从禁止转为解放。"
+    purpose: "防止被剥夺感。"
+    example_structure: "不是我不能吸，而是我终于不用吸。"
+  - strategy: "反复提醒不要等待证明。"
+    purpose: "避免用户陷入检查、怀疑和试探。"
+    example_structure: "不用等某个信号；你已经通过不再摄入尼古丁完成关键动作。"
+  - strategy: "对外部吸烟者保持同情。"
+    purpose: "减少羡慕和社会诱惑。"
+    example_structure: "看到他们时，观察他们被迫寻找下一支的状态。"
+  - strategy: "指令清晰而不含糊。"
+    purpose: "在关键边界上减少谈判空间。"
+    example_structure: "不要抽下一支，不要留烟，不要用尼古丁替代。"
+  - strategy: "鼓励用户用自我发现完成转化。"
+    purpose: "让信念改变来自用户自己的观察，而不是被灌输。"
+    example_structure: "你自己观察下一支烟，看它到底提供了什么。"
+
+state_machine:
+  states:
+    - state: unaware
+      description: "用户吸烟但尚未看见成瘾机制，常把吸烟理解为选择、习惯或享受。"
+      coaching_goal: "建立陷阱模型，降低人格羞耻。"
+      entry_signals:
+        - "我喜欢吸烟。"
+        - "我暂时不想戒。"
+      exit_criteria:
+        - "用户承认吸烟可能并非真实享受。"
+    - state: ambivalent
+      description: "用户想戒又害怕失去香烟，处于矛盾与拖延。"
+      coaching_goal: "命名恐惧并拆除时机借口。"
+      entry_signals:
+        - "我知道该戒，但现在不是时候。"
+        - "我怕戒了没法应对压力。"
+      exit_criteria:
+        - "用户能列出自己的主要恐惧。"
+    - state: questioning
+      description: "用户开始质疑吸烟好处，但仍保留部分特殊场景例外。"
+      coaching_goal: "逐一拆除压力、放松、注意力、无聊、社交、饭后等收益幻觉。"
+      entry_signals:
+        - "也许烟没那么有用。"
+        - "但饭后那支还是不一样。"
+      exit_criteria:
+        - "用户能解释至少三个所谓好处的真实机制。"
+    - state: reframing
+      description: "用户把戒烟从牺牲改写为获得自由。"
+      coaching_goal: "形成不需要、不怀念、不等待的目标信念。"
+      entry_signals:
+        - "我好像没有什么要放弃。"
+        - "烟只是让我缓解它自己造成的问题。"
+      exit_criteria:
+        - "用户表达成为非吸烟者是好事。"
+    - state: preparing
+      description: "用户准备执行最后一支烟仪式和环境边界。"
+      coaching_goal: "确认信念已稳定，预演触发场景，移除退路。"
+      entry_signals:
+        - "我准备戒了。"
+        - "我想知道最后怎么开始。"
+      exit_criteria:
+        - "用户完成最后一支烟决断或设定明确立即执行。"
+    - state: quit_day
+      description: "用户熄灭最后一支烟，身份切换为非吸烟者。"
+      coaching_goal: "强化自由身份，禁止等待、质疑和替代品。"
+      entry_signals:
+        - "这是最后一支。"
+        - "我已经不吸了。"
+      exit_criteria:
+        - "用户用非吸烟者身份描述自己。"
+    - state: withdrawal
+      description: "用户经历轻微生理戒断和场景触发残留。"
+      coaching_goal: "把渴望重标注为恢复信号，保持正常生活。"
+      entry_signals:
+        - "我突然想抽。"
+        - "手上空空的。"
+      exit_criteria:
+        - "用户能多次不服从渴望并保持正向解释。"
+    - state: trigger_exposure
+      description: "用户进入饭后、社交、压力、饮酒、递烟等高风险场景。"
+      coaching_goal: "使用预演脚本，保持非吸烟者视角。"
+      entry_signals:
+        - "今晚有饭局。"
+        - "有人给我递烟。"
+      exit_criteria:
+        - "用户通过场景且没有复吸。"
+    - state: stable
+      description: "用户基本不再需要香烟，并开始体验自由感。"
+      coaching_goal: "防止自信后的试探，建立长期零容忍。"
+      entry_signals:
+        - "我几乎不想了。"
+        - "看到别人抽也没感觉。"
+      exit_criteria:
+        - "用户长期维持不吸，并能处理偶发念头。"
+    - state: relapse_risk
+      description: "用户出现只一支、试试看、特殊情况、怀念或替代品等危险推理。"
+      coaching_goal: "立即回到链条视角和复吸模式纠正。"
+      entry_signals:
+        - "就一支应该没事。"
+        - "我只是想证明自己不会上瘾。"
+      exit_criteria:
+        - "用户放弃试探并重新确认不吸边界。"
+    - state: relapse
+      description: "用户已经吸了一口或一支，尼古丁链条被重新触发。"
+      coaching_goal: "阻断羞耻性放弃，立即停止下一支。"
+      entry_signals:
+        - "我刚刚抽了。"
+        - "我复吸了。"
+      exit_criteria:
+        - "用户复盘触发和错误推理，重新进入reframing或quit_day。"
+
+  transitions:
+    - from: unaware
+      to: ambivalent
+      condition: "用户产生戒烟动机或对吸烟收益出现疑问。"
+      intervention: INT005
+    - from: ambivalent
+      to: questioning
+      condition: "用户愿意分析自己为何吸烟。"
+      intervention: INT001
+    - from: questioning
+      to: reframing
+      condition: "主要吸烟好处被拆解为幻觉或戒断缓解。"
+      intervention: INT004
+    - from: reframing
+      to: preparing
+      condition: "用户不再认为戒烟是牺牲，并愿意设定停止边界。"
+      intervention: INT011
+    - from: preparing
+      to: quit_day
+      condition: "用户完成最后一支烟仪式或明确停止摄入尼古丁。"
+      intervention: INT007
+    - from: quit_day
+      to: withdrawal
+      condition: "用户进入停止后的最初恢复期。"
+      intervention: INT017
+    - from: withdrawal
+      to: trigger_exposure
+      condition: "用户遇到饭后、压力、社交、递烟、饮酒等触发。"
+      intervention: INT012
+    - from: trigger_exposure
+      to: withdrawal
+      condition: "高风险场景结束但仍处于早期戒断期。"
+      intervention: INT006
+    - from: trigger_exposure
+      to: stable
+      condition: "用户多次通过触发场景并保持非吸烟者身份。"
+      intervention: INT013
+    - from: withdrawal
+      to: stable
+      condition: "用户不再把戒断感视为问题，并恢复正常生活。"
+      intervention: INT008
+    - from: stable
+      to: relapse_risk
+      condition: "用户出现试探、偶尔一支、庆祝一支、怀念等推理。"
+      intervention: INT003
+    - from: withdrawal
+      to: relapse_risk
+      condition: "用户把戒断感解释为需要香烟。"
+      intervention: INT006
+    - from: trigger_exposure
+      to: relapse_risk
+      condition: "用户在场景中羡慕吸烟者或想接受递烟。"
+      intervention: INT013
+    - from: relapse_risk
+      to: stable
+      condition: "用户尚未吸烟并完成链条视角纠正。"
+      intervention: INT003
+    - from: relapse_risk
+      to: relapse
+      condition: "用户已经吸了一口或一支。"
+      intervention: INT016
+    - from: relapse
+      to: reframing
+      condition: "用户愿意复盘错误信念和触发机制。"
+      intervention: INT016
+    - from: relapse
+      to: quit_day
+      condition: "用户已完成复盘并立即重新停止。"
+      intervention: INT011
+
+skill_runtime:
+  intake_questions:
+    - id: IQ001
+      question: "你认为吸烟目前帮你解决了什么？"
+      maps_to:
+        - false_beliefs
+        - transformations
+    - id: IQ002
+      question: "你最害怕戒烟后发生什么？"
+      maps_to:
+        - false_beliefs
+        - interventions
+    - id: IQ003
+      question: "你最舍不得哪一支或哪个场景？"
+      maps_to:
+        - triggers
+        - behavioral_experiments
+    - id: IQ004
+      question: "你过去尝试过哪些戒烟方法，失败发生在哪个时刻？"
+      maps_to:
+        - relapse_patterns
+        - state_machine
+    - id: IQ005
+      question: "你现在更像是在尝试戒烟，还是已经准备成为非吸烟者？"
+      maps_to:
+        - identity_transformation
+        - state_machine
+  coaching_loop:
+    - step: "classify_state"
+      action: "根据用户语言进入state_machine对应状态。"
+    - step: "detect_false_beliefs"
+      action: "从用户理由中匹配false_beliefs。"
+    - step: "apply_transformation"
+      action: "选择对应Belief Transformation进行推理重构。"
+    - step: "assign_experiment"
+      action: "若用户仍怀疑，选择一个低风险行为实验。"
+    - step: "confirm_identity"
+      action: "用非吸烟者身份语言总结用户的新立场。"
+    - step: "plan_trigger_response"
+      action: "为未来24到72小时高风险触发写出回应脚本。"
+    - step: "monitor_relapse_risk"
+      action: "检测只一支、替代品、等待、羡慕、时机借口等危险推理。"
+  response_style:
+    do:
+      - "直接、确定、温和。"
+      - "先解释机制，再给行动。"
+      - "把用户从羞耻中拉出来。"
+      - "用非吸烟者身份收尾。"
+    avoid:
+      - "用恐吓作为主要动力。"
+      - "把戒烟说成长期忍耐。"
+      - "鼓励减量、试探或保留香烟。"
+      - "将失败解释为用户人格问题。"

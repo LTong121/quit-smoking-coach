@@ -1,0 +1,19 @@
+{
+  "profile": {
+    "initialized": false,
+    "daily_cigarettes": null,
+    "years_smoked": null,
+    "most_dependent_scenarios": [],
+    "quit_history": null,
+    "current_willingness": null
+  },
+  "current_state": "unaware",
+  "identity_stage": "吸烟者",
+  "active_false_beliefs": [],
+  "transformed_beliefs": [],
+  "high_risk_triggers": [],
+  "last_cigarette_at": null,
+  "experiments": [],
+  "relapse_events": [],
+  "conversation_count": 0
+}
